@@ -8,7 +8,13 @@ Rails.application.routes.draw do
   
   namespace :api, format: 'json' do
     namespace :v1  do
-      resources :articles
+      resources :comments
+    end
+  end
+  
+  namespace :api, format: 'json' do
+    namespace :v1  do
+      resources :alticles
     end
   end
 end
