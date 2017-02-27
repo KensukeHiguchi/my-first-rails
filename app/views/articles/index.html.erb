@@ -21,5 +21,17 @@
  <% end %>
 </table>
 
+<%
+=begin
+%>
+<%= react_component('ArticleBox',
+  data: [
+    {title: "Pete Hunt", text: "This is one comment"},
+    {title: "Jordan Walke", text: "This is *another* comment"}
+  ]
+) %>
+<%
+=end
+%>
 
-<%= react_component('ArticleBox', url:'/api/v1/articles.json') %>
+<%= react_component('ArticleBox', '/api/v1/articles.json') %>
