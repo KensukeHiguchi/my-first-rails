@@ -1,8 +1,10 @@
 class Api::V1::ArticlesController < ApplicationController
   def index
     @data = [
-      { title: 'Pete Hunt', text: 'This is one comment' },
-      { title: 'Jordan Walke', text: 'This is another comment' }
+      { title: 'konnichiwa', text: 'yamaptaro1' },
+      { title: 'sayonara', text: 'yamaphanako2' }
     ]
+    
+    # @data = Article.all
   end
 end

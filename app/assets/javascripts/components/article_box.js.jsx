@@ -1,9 +1,28 @@
 var ArticleBox = React.createClass({
+  
+  getInitialState: function() {
+    return {data: []};
+  },
+  
+  componentDidMount: function() {
+    $.ajax({
+      url: this.props.url,
+      dataType: 'json',
+      success: function(result) {
+        this.setState({data: result.data});
+      }.bind(this),
+      error: function(xhr, status, err) {
+        console.error(this.props.url, status, err.toString());
+      }.bind(this)
+    });
+  },
+  
   render: function() {
     return (
       <div className="articleBox">
         <h1>Articles</h1>
-        <ArticleList data={this.props.data}/>
+        <ArticleList data={this.state.data}/>
+        <br />
         <ArticleForm />
       </div>
     );
@@ -31,7 +50,7 @@ var ArticleForm = React.createClass({
   render: function() {
     return (
       <div className="articleForm">
-        Hello, world! I am a ArticleForm.
+        ArticleFormコンポーネントです。
       </div>
     );
   }
