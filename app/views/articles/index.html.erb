@@ -21,17 +21,9 @@
  <% end %>
 </table>
 
-<%
-=begin
-%>
 <%= react_component('ArticleBox',
   data: [
-    {title: "Pete Hunt", text: "This is one comment"},
-    {title: "Jordan Walke", text: "This is *another* comment"}
+    {title: 'hoge hoge1', text: "piyo piyo1"},
+    {title: 'hoge hoge2', text: "piyo piyo2"}
   ]
 ) %>
-<%
-=end
-%>
-
-<%= react_component('ArticleBox', '/api/v1/articles.json') %>

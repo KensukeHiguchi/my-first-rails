@@ -1,23 +1,9 @@
 var ArticleBox = React.createClass({
-  getInitialState: function() {
-    return {data: []};
-  },
-  componentDidMount: function() {
-    $.ajax({
-      url: this.props.url,
-      dataType: 'json',
-      success: function(result) {
-        this.setState({data: result.data});
-      }.bind(this),
-      error: function(xhr, status, err) {
-        console.error(this.props.url, status, err.toString());
-      }.bind(this)
-    });
-  },
   render: function() {
     return (
       <div className="articleBox">
-        <ArticleList data={this.props.data} />
+        <h1>Articles</h1>
+        <ArticleList data={this.props.data}/>
         <ArticleForm />
       </div>
     );
@@ -44,7 +30,7 @@ var ArticleList = React.createClass({
 var ArticleForm = React.createClass({
   render: function() {
     return (
-      <div className="commentForm">
+      <div className="articleForm">
         Hello, world! I am a ArticleForm.
       </div>
     );
